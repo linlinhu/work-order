@@ -1,0 +1,46 @@
+/* pages/my_group/member_list/member_list.wxss */
+
+.page {
+    background: #fff;
+}
+
+.page .weui-search-bar {
+    height: 88rpx;
+    margin: auto 34rpx;
+    background: #fff;
+    border: 0;
+}
+
+.weui-search-bar__form {
+    border: 0;
+    background: #f4f4f4;
+}
+
+.page .weui-search-bar .weui-search-bar__label {
+    background: #f4f4f4;
+}
+
+.page .group-msg {
+    margin-top: 32rpx;
+    padding-bottom: 40rpx;
+    border-bottom: 1px solid #ddd;
+}
+
+.page .group-msg text {
+    padding-left: 20rpx;
+    font-size: 34rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: #333;
+}
+
+.page .group-msg .right {
+    text-align: right;
+    margin-right: 35rpx;
+}
+
+.tongxunlu {
+    box-sizing: border-box;
+    height: calc(100vh - 220rpx);
+    position: relative;
+}

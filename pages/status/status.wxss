@@ -1,0 +1,65 @@
+/* pages/status/status.wxss */
+@import "/style/order_search.wxss";
+@import "/style/device_exception.wxss";
+.page {
+    background: #fff;
+    padding-top: 32rpx;
+}
+
+/* .page.status scroll-view {
+    height:calc(100vh - 120rpx);
+    box-sizing:border-box;
+    padding-bottom: 0;
+} */
+
+.page.status .weui-navbar {
+    background: #fff;
+}
+
+.page.status .search-box {
+    position: fixed;
+    width: 100vw;
+    top: 0px;
+    left: 0;
+    padding: 32rpx 0;
+    background: #fff;
+    z-index: 2;
+}
+
+.page.status .search-box .search-template {
+    width: calc(100vw - 68rpx);
+}
+
+.page.status .weui-tab {
+    margin-top: 88rpx;
+}
+
+.page.status .weui-tab .weui-navbar {
+    position: fixed;
+    top: 120rpx;
+}
+
+.page .weui-tab__panel .orders {
+    background: #f8f8f8;
+}
+.page .weui-tab__panel .orders .item {
+    position: relative;
+}
+
+.page .weui-tab__panel .orders .item:last-child {
+    margin-bottom: 0;
+}
+
+.page .weui-tab__panel .orders .item image {
+    position: absolute;
+    width: 70rpx;
+    height: 70rpx;
+    top: 0;
+    right: 0;
+}
+
+.page .weui-tab__panel .orders .no-data {
+    padding: 100rpx 0;
+    text-align: center;
+    background: #fff;
+}

@@ -1,0 +1,5 @@
+<!--components/barcode/com_barcode.wxml-->
+<view class="weui-btn-area">
+    <button class="weui-btn barcode-btn" type='primary' bindtap='onScan'>{{template.title}}</button>
+    <view hidden='true'>{{barcodeResult}}</view>
+</view>

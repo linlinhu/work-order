@@ -1,0 +1,14 @@
+<!--pages/splash/splash.wxml-->
+<!-- 
+    启动界面 
+    免登录确认(微信粉丝绑定确认)
+-->
+<view class="page splash">
+    <view class="page__title">
+        <view class="system-info">
+            <view class="system-name">{{appName}}</view>
+            <view class="system-version">{{appVersion}}</view>
+            <image class="logo" src="{{logo}}" mode="cover"></image>
+        </view>
+    </view>
+</view>

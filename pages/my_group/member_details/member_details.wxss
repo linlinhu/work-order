@@ -1,0 +1,58 @@
+/* pages/member_details/member_details.wxss */
+
+.page.member-details .img-bg {
+    height: 280rpx;
+    position: relative;
+    text-align: center;
+}
+
+.page.member-details .img-bg image {
+    width: 100vw;
+    height: 280rpx;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.page.member-details .img-bg text {
+    display: inline-block;
+    margin-top: 115rpx;
+    height: 50rpx;
+    width: 50rpx;
+    text-align: center;
+    line-height: 50rpx;
+    font-size: 44rpx;
+    z-index: 1;
+    color: #fff;
+}
+
+.page.member-details .weui-panel_access {
+    margin-top: 0;
+}
+
+.page.member-details .weui-panel_access::before {
+    border: 0;
+}
+
+.page.member-details .weui-panel_access .weui-media-box__title {
+    font-size: 32rpx;
+    font-weight: 500;
+    color: #333;
+}
+
+.page.member-details .weui-panel_access .weui-media-box__desc {
+    font-size: 28rpx;
+    color: #666;
+}
+
+.page.member-details .weui-media-box:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    height: 1px;
+    border-top: 1rpx solid #ddd;
+    color: #e5e5e5;
+    left: 15px;
+    right: 15px;
+}

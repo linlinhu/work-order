@@ -1,0 +1,23 @@
+/* pages/splash/splash.wxss */
+page {
+    background-color: #fff;
+    height:100%;
+}
+
+.splash .system-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50rpx;
+}
+
+.splash .system-info .system-version {
+    font-size: 26rpx;
+}
+
+.splash .system-info .logo {
+    width: 180rpx;
+    height: 180rpx;
+    margin: 10rpx;
+    border-radius: 50%;
+}

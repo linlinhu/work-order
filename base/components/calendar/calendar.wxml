@@ -1,0 +1,34 @@
+<!--components/calendar/calendar.wxml-->
+<view class='calendar'>
+  <view class='weui-flex range-type'>
+    <view class='weui-flex__item' bindtap='getRangeDate' data-type="all">全部</view>
+    <view class='weui-flex__item' bindtap='getRangeDate' data-type="today">今日</view>
+    <view class='weui-flex__item' bindtap='getRangeDate' data-type="week">本周</view>
+    <view class='weui-flex__item' bindtap='getRangeDate' data-type="month">本月</view>
+  </view>
+  <view class='date-show weui-flex'>
+    <view class="weui-flex__item {{(start_time > 0 && end_time > 0) || start_time == 0 ? 'active' : ''}}">{{start_date ? start_date : '开始时间'}}</view>
+    <image src='to.png' style="width: 16px; height: 16px;margin-top: 14px;" mode='aspectFill'></image>
+    <view class="weui-flex__item {{start_time > 0 && end_time == 0 ? 'active' : ''}}">{{end_date ? end_date : '结束时间'}}</view>
+  </view>
+  <view class='week-title weui-flex'>
+    <view class="weui-flex__item">日</view>
+    <view class="weui-flex__item">一</view>
+    <view class="weui-flex__item">二</view>
+    <view class="weui-flex__item">三</view>
+    <view class="weui-flex__item">四</view>
+    <view class="weui-flex__item">五</view>
+    <view class="weui-flex__item">六</view>
+  </view>
+  <scroll-view scroll-y bindtouchstart="tapStart" bindtouchend='tapEnd'>
+    <view class="month_block" wx:for="{{months_days}}" wx:key="title" wx:for-item="month_days">
+      <view class='month-title'>{{month_days.title}}</view>
+      <view class='day-row'>
+        <view wx:for="{{month_days.days}}" wx:for-item="day" 
+        bindtap='tapDay' data-date="{{day.date}}" data-time="{{day.time}}"
+        class='{{start_time == day.time  && day.time > 0 ? "date-start" : ""}} {{(day.time > start_time && day.time < end_time) ? "date-mid" : ""}} {{end_time==day.time && day.time > 0 ? "date-end" : ""}}'>{{day.text}}</view>
+      </view>
+    </view>
+  </scroll-view>
+  <button class="weui-btn" type="primary" bindtap='getRangeDate' data-type="select">保存</button>
+</view>

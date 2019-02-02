@@ -1,0 +1,104 @@
+/* template /order_search/order_search.wxss */
+
+.search-template {
+    margin: 0 34rpx;
+    height: 88rpx;
+    background: rgba(244, 244, 244, 1);
+    border-radius: 12rpx;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.search-template .params {
+    float: left;
+    height: 88rpx;
+    width: 25%;
+}
+
+.search-template .params, .search-template .user-params {
+    display: inline-block;
+    font-size: 26rpx;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.search-template .user-params {
+    position: relative;
+    height: 88rpx;
+    width: 100%;
+}
+
+.search-template .user-params::after {
+    position: absolute;
+    content: '';
+    height: 40rpx;
+    width: 1rpx;
+    border-right: 1px solid #ddd;
+    right: 0px;
+    top: 26rpx;
+}
+
+.search-template .user-params .typeString,
+.search-template .user-params .range-time {
+    display: inline-block;
+    width: 130rpx;
+    height: 88rpx;
+    padding: 0 8rpx;
+    line-height: 88rpx;
+    text-align: center;
+    overflow: hidden;
+}
+
+.search-template .user-params .typeString {
+    margin-left: -10rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.search-template .user-params .range-time {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap:nowrap;
+
+}
+
+.search-template .user-params .range-time.items-2 view {
+    height: 30rpx;
+    margin: -10px 0;
+}
+
+.search-template .user-params::before {
+    content: '';
+    width: 10rpx;
+    height: 10rpx;
+    display: block;
+    position: absolute;
+    border: 1px solid #333;
+    background: transprant;
+    transform: rotate(-135deg);
+    border-bottom: 0;
+    border-right: 0;
+    right: 14rpx;
+    top: 34rpx;
+}
+
+.search-template .weui-search-bar {
+    display: inline-block;
+    width: 75%;
+}
+
+.search-template .weui-search-bar {
+    border: none;
+    background: transparent;
+}
+
+.search-template .weui-search-bar input {
+    width: calc(100% - 50rpx);
+    float: left;
+}
+.phcolor {
+    color: #bbb;
+    font-size: 26rpx;
+}

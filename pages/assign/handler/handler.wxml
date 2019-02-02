@@ -1,0 +1,27 @@
+<!--pages/assign/handler/handler.wxml-->
+<view class="page assign">
+
+    <form bindsubmit="onAssignSubmit" report-submit="true">
+    <view class="weui-panel weui-panel_access form">
+        <view class="weui-panel__bd">
+            <view class="weui-media-box weui-media-box_text">
+                <view class="weui-media-box__title weui-media-box__title_in-text">指派给</view>
+                <view class="weui-media-box__desc">
+                    {{baseInfo.userTo.name}}
+                    <image src="/assets/assign/tel-book.png" bindtap='selectMember'></image>
+                </view>
+            </view>
+            <view class="weui-media-box weui-media-box_text">
+                <view class="weui-media-box__title weui-media-box__title_in-text">手机号</view>
+                <view class="weui-media-box__desc">{{baseInfo.userTo.mobile}}</view>
+            </view>
+            <view class="weui-media-box weui-media-box_text">
+                <view class="weui-media-box__title weui-media-box__title_in-text">备注</view>
+                <textarea name="memo"></textarea>
+            </view>
+
+        </view>
+    </view>
+    <button class='btn btn-primary' form-type='submit'>确定</button>
+    </form>
+</view>

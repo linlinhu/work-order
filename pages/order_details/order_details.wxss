@@ -1,0 +1,283 @@
+/* pages/order_details/order_details.wxss */
+
+.order-details {
+    position: relative;
+    background: #ffffff;
+}
+.order-details > view {
+    height: calc(100vh - 88rpx);
+    overflow: hidden;
+}
+.order-details > view.buts-0 {
+     height:100vh;
+}
+.order-details .btn-title {
+    font-size: 34rpx;
+}
+.order-details .btn-group {
+    height: 88rpx;
+}
+
+/* 设备详情 bengin */
+
+.basic-msg .weui-cells::after {
+    border: 0;
+}
+
+.basic-msg .woui-group-title {
+    margin-top: 0.77em;
+    margin-bottom: 0.3em;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #18a4fc;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.order-details .basic-msg .weui-cell {
+    height: 98rpx;
+    line-height: 98rpx;
+    font-size: 30rpx;
+}
+
+.order-details .basic-msg .weui-cell__hd {
+    color: #333;
+}
+
+.order-details .basic-msg .weui-cell__bd {
+    text-align: right;
+    color: #666;
+    width: 100%;
+}
+
+
+/* 上下两行样式 产品界面变更后废弃 */
+/* .weui-cell {
+    -moz-box-orient: vertical !important;
+    -webkit-box-orient: vertical !important;
+    box-orient: vertical !important;
+    -webkit-box-align: start !important;
+    -webkit-align-items: start !important;
+    align-items: start !important;
+    display: -moz-box !important;
+    display: -webkit-box !important;
+    display: box !important;
+} */
+
+.basic-msg .weui-cell:after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    height: 1px;
+    border-top: 1rpx solid #ddd;
+    color: #ddd;
+    left: 15px;
+    right: 15px;
+}
+
+
+/* 设备详情 end */
+
+/* 异常定位 bengin */
+
+/* 异常定位 end */
+
+/* 追踪 bengin */
+
+.order-details .time-cue {
+    padding: 48rpx 60rpx;
+    font-size: 26rpx;
+}
+
+.order-details .time-cue .cue {
+    position: relative;
+    padding-left: 30rpx;
+    padding-bottom: 40rpx;
+}
+
+.order-details .time-cue .cue:last-child {
+    padding-bottom:0;
+}
+
+.order-details .time-cue .cue::before {
+    content: '';
+    height: 100%;
+    border-left: 2px solid #ddd;
+    position: absolute;
+    left: -4rpx;
+    top: 14rpx;
+}
+.order-details .time-cue .cue.orange::before {
+    border-left: 2px dashed #ddd;
+}
+.order-details .time-cue .cue.orange .below::before {
+    content: '';
+    height: 24rpx;
+    width:24rpx;
+    position: absolute;
+    background: #ffffff;
+    left: -14rpx;
+    bottom: -14rpx;
+}
+
+.order-details .time-cue .cue::after {
+    position: absolute;
+    top: 12rpx;
+    left: -15rpx;
+    content: '';
+    width: 20rpx;
+    height: 20rpx;
+    border: 5rpx solid #ff5745;
+    border-radius: 100% 100%;
+    background: #fff;
+}
+
+.order-details .time-cue .blue::after {
+    border-color: #299ff8;
+}
+
+.order-details .time-cue .green::after {
+    border-color: #1cea51;
+}
+
+.order-details .time-cue .above {
+   padding-bottom: 10rpx;
+   padding-left: 10rpx;
+}
+
+.order-details .time-cue .above .title {
+    padding-right: 38rpx;
+    font-size: 30rpx;
+    font-weight: bold;
+    color: #333;
+}
+
+.order-details .time-cue .below text {
+    display: inline-block;
+    min-width: calc(50% - 10rpx);
+    padding: 8rpx 0 8rpx 10rpx;
+}
+.order-details .cue .wrap image {
+   height: 180rpx;
+   width: 180rpx;
+   margin: 5rpx 10rpx;
+}
+.order-details .time-cue .no-data {
+    text-align:center;
+    margin:60rpx 0;
+}
+
+/* 追踪 end */
+
+.abnormal-location {
+    width: 100vw;
+    height: calc(100vh - 200rpx);
+    position: relative;
+}
+
+.abnormal-location .switch {
+    position: absolute;
+    padding: 8px 15px;
+    height: 14px;
+    line-height: 14px;
+    font-size: 14px;
+    border-radius: 15px 0 0 15px;
+    box-shadow: 2px 1px 10px #ccc;
+    right: 0px;
+    top: 16px;
+    z-index: 9;
+    background-color: #fff;
+    color: #2f97e6;
+}
+
+.abnormal-location .switch > image {
+    width: 12px;
+    height: 12px;
+    margin-right: 3px;
+    vertical-align: middle;
+}
+
+/* TAB Start */
+
+.weui-navbar__item {
+    padding: 10px 0;
+    background-color: #fff;
+}
+
+.weui-navbar__item.weui-bar__item_on {
+    color: #18a4fc;
+}
+
+.weui-navbar__title {
+    font-size: 17px;
+}
+
+.weui-tab__panel {
+    padding-top: 45px;
+}
+
+/* TAB End */
+
+
+button {
+    border-radius: 0;
+}
+/** 退回模态窗口样式*/
+.modal-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .2);
+    z-index: 999;
+}
+
+.modal-wrap > .content {
+    width: 82%;
+    height: 480rpx;
+    background-color: #fff;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    margin-top: -240rpx;
+    left: 9%;
+    overflow: hidden;
+}
+
+.modal-wrap > .content .top {
+    padding: 15px 0;
+    text-align: center;
+    height: 16px;
+    line-height: 16px;
+    font-size: 16px;
+    color: #333;
+    font-weight:500;
+}
+
+.modal-wrap > .content .center {
+    height: calc(100% - 90px);
+    padding: 0 15px 15px 15px;
+    box-sizing: border-box;
+}
+
+.modal-wrap > .content .center textarea {
+    background-color: #f4f4f4;
+    width: 100%;
+    height: 100%;
+    font-size: 26rpx;
+    padding: 16rpx;
+    box-sizing: border-box;
+
+}
+
+.modal-wrap > .content .bot button.btn {
+    background-color: #fff;
+    color: #18A4FC;
+    border-right: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+}
+
+.modal-wrap > .content .bot button.btn:last-child {
+    border-right: 0;
+}

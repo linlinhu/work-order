@@ -1,0 +1,50 @@
+@import "/style/order_search.wxss";
+@import "/style/device_exception.wxss";
+.finished-task .search-box {
+    position: fixed;
+    top: 90rpx;
+    width: 100vw;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    z-index: 998;
+}
+
+.finished-task .search-box .search-template {
+    margin: 32rpx 34rpx;
+}
+
+.finished-task  calendar, .finished-task .top-date-oper .fold-area {
+    z-index: 999;
+}
+
+.finished-task  calendar {
+    position: fixed;
+    top: 0rpx;
+    width: 100vw;
+}
+
+.finished-task .orders {
+    margin-top: 244rpx;
+    height: 100%;
+    padding-top: 24rpx;
+    background: #f8f8f8;
+}
+
+.finished-task .orders .no-data {
+    width: 100vw;
+    padding: 100rpx 0;
+    text-align: center;
+    background: #fff;
+}
+
+.finished-task .orders .item:last-child {
+    margin-bottom: 0;
+}
+
+.finished-task .orders .item image {
+    position: absolute;
+    width: 70rpx;
+    height: 70rpx;
+    top: 0;
+    right: 0;
+}

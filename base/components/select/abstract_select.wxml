@@ -1,0 +1,6 @@
+<!--base/components/select/abstract_select.wxml-->
+
+<label>
+    <selectable disabled="{{false}}"></selectable>
+    {{item}}
+</label>

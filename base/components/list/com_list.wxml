@@ -1,0 +1,9 @@
+<!--base/components/list/com_list.wxml-->
+<view class="weui-cells weui-cells_after-title">
+    <block wx:for="{{relatedTemplate.groups}}" wx:for-item="group" wx:for-index="gIdx" wx:key="id">
+        <!-- <view class="woui-group-title">{{group.name}}</view> -->
+        <block wx:for="{{group.items}}" wx:for-item="item" wx:key="id">
+            <com_input_text template="{{item}}" disabled="true" value="{{datasource[item.dataKey] ? datasource[item.dataKey] : defaultValue}}" />
+        </block>
+    </block>
+</view>

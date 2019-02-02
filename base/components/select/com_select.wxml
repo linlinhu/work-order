@@ -1,0 +1,11 @@
+<!--components/select/com_select.wxml-->
+<view class="weui-cell weui-cell_select">
+    <view class="weui-cell__hd weui-cell__hd_in-select-after">
+        <!-- <view class="weui-label">{{template.title}}</view> -->
+    </view>
+    <view class="weui-cell__bd">
+        <picker bindchange="onSelectChanged" value="{{index}}" range-key="text" range="{{datasource}}" disabled="{{disabled}}">
+            <view class="weui-select weui-select_in-select-after">{{datasource[index].text}}</view>
+        </picker>
+    </view>
+</view>

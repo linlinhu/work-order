@@ -1,0 +1,34 @@
+<view class='top-date-oper'>
+    <view class='info {{!isFold ? "infoed" : ""}}' bindtap='foldPicker'><text>{{pickerDetail?pickerDetail:"请选择"}}</text></view>
+    <view class='fold-area' wx:if="{{!isFold}}" bindtap='tapFold' data-fold="1">
+        <view class='filter-block'>
+            <view class='tip'>处理时间</view>
+            <view class='weui-flex detail btns'>
+                <view class='weui-flex__item deal-ranges' wx:for="{{dealRanges}}" wx:key="type">
+                    <button class='{{item.class}}' bindtap='tapPicker' data-index='{{index}}'>{{item.name}}</button>
+                    <image wx:if="{{item.class == 'checked-range'}}" src='active.png'></image>
+                </view>
+            </view>
+        </view>
+        <view class='filter-block'>
+            <view class='tip'>
+                <text class='left'>自定义</text>
+                <text class='right sub-tip'>最长可查找3个月的记录</text>
+            </view>
+            <view class='weui-flex detail' style="margin-left: -16rpx">
+                <view class='weui-flex__item'>
+                    <picker mode="date" value="{{startDate}}" start="{{minDate}}" end="{{maxDate1 ? maxDate1 : maxDate}}" bindtap='upStartDate' bindchange='changeStartDate' class='pick-date'>
+                        <view class="picker {{upStartDate ? 'infoed' : ''}}"><text>{{startDate?startDate:'开始时间'}}</text></view>
+                    </picker>
+                </view>
+                <view class='weui-flex__item'>
+                    <picker mode="date" value="{{endDate}}" start="{{minDate1 ? minDate1 : minDate}}" end="{{maxDate}}" bindtap='upEndDate' bindchange='changeEndDate' class='pick-date'>
+                        <view class="picker {{upEndDate ? 'infoed' : ''}}"><text>{{endDate?endDate:'结束时间'}}</text></view>
+                    </picker>
+                </view>
+                <button class='btn btn-primary confirm' bindtap='confirmPicker'>确定</button>
+
+            </view>
+        </view>
+    </view>
+</view>

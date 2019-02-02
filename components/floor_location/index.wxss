@@ -1,0 +1,26 @@
+.floor-location {
+  display: inline-block;
+  position: relative;
+  padding: 20rpx 0;
+}
+movable-view {
+  height: 100%;
+  width: 100%;
+}
+
+.floor-location image.d-point {
+  width: 22px;
+  height: 17px;
+  position: absolute;
+  z-index: 2;
+}
+.floor-location .shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0);
+}
+

@@ -1,0 +1,53 @@
+
+function formatNowDate() {
+    var today = getDate();
+    return formatDate(today);
+}
+
+function formatDate(date) {
+    var year = formatNumber(date.getFullYear());
+    var month = formatNumber(date.getMonth() + 1);
+    var day = formatNumber(date.getDate());
+    return year + '-' + month + '-' + day;
+}
+
+function formatNowTime() {
+    var today = getDate();
+    return formatTime(today);
+}
+
+function formatTime(date) {
+    var hour = formatNumber(date.getHours());
+    var minute = formatNumber(date.getMinutes());
+    return hour + ':' + minute;
+}
+
+function formatNowDateTime() {
+    var today = getDate();
+    return formatDateTime(today);
+}
+
+function formatDateTime(date) {
+    var year = date.getFullYear()
+    var month = date.getMonth() + 1
+    var day = date.getDate()
+    var hour = date.getHours()
+    var minute = date.getMinutes()
+    var second = date.getSeconds()
+
+    return formatNowDate(date) + ' ' + formatTime(date);
+}
+
+function formatNumber(n) {
+    n = n.toString();
+    return n[1] ? n : '0' + n;
+}
+
+module.exports = {
+    formatNowDate: formatNowDate,
+    formatNowTime: formatNowTime,
+    formatDate: formatDate,
+    formatTime: formatTime,
+    formatNowDateTime: formatNowDateTime,
+    formatDateTime: formatDateTime
+};

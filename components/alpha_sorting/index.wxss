@@ -1,0 +1,76 @@
+@import '/style/weui.wxss';
+.content {
+  box-sizing: border-box;
+  height: 100%;
+}
+.in-to-view {
+  padding: 100rpx 86rpx 30rpx 34rpx;
+  position: relative;
+  background: #fff;
+}
+.alpha-cate {
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  background: #FFBC2D;
+  color: #fff;
+  border-radius: 40rpx;
+  font-size: 24rpx;
+  text-align: center;
+  position: absolute;
+  top: 30rpx;
+  left: 34rpx;
+}
+
+.in-to-view .item {
+  padding: 20rpx 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.rgt > .all {
+  white-space: normal;
+  display: inline-block;
+  width: 45rpx;
+  height: 30rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: rgb(88, 87, 87);
+  text-align: center;
+}
+
+.rgt {
+  padding: 10rpx 0px;
+  width: 45rpx;
+  font-size: 20rpx;
+  position: absolute;
+  top: 50%;
+  right: 20rpx;
+  transform: translate(0, -50%);
+  border-radius: 20rpx;
+}
+
+.alpha {
+  height: 30rpx;
+  line-height: 30rpx;
+  color: #000;
+  text-align: center;
+}
+
+.active {
+  color: #18A4FC;
+}
+
+.list-fixed {
+  position: fixed;
+  width:40rpx;
+  height:40rpx;
+  line-height:40rpx;
+  background:#FFBC2D;
+  color:#fff;
+  border-radius:40rpx;
+  font-size:24rpx;
+  text-align:center;
+  top:260rpx;
+  left:34rpx;
+
+}

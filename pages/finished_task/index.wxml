@@ -1,0 +1,17 @@
+<import src="/template/order_search" />
+<import src="/template/device_exception" />
+<view class="page finished-task">
+    <calendar startTime="" endTime="" bindpicker="timePicker"/>
+    <view class='search-box'>
+        <template is="search-template" data="{{...params}}" />
+    </view>
+    
+    <view class='orders'>
+        <view class="item" wx:for="{{orders}}" wx:for-item="order" wx:key="{*this}" data-id="{{order.id}}" data-deviceId="{{order.deviceId}} " data-workOrderNumber="{{order.workOrderNumber}}" bindtap="getOrderDetials">
+            <template is="tplDeviceException" data="{{...order}}" />
+            <image wx:if="{{order.eventStatus==10}}" hidden="{{eventStatus!=0}}" src="/assets/status/zhuan.png"></image>
+        </view>
+        <view wx:if="{{orders.length == 0}}" class='no-data'>暂无数据</view>
+    </view>
+   
+</view>

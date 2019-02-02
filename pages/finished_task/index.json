@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "calendar": "/base/components/mycalendar/index"
+    },
+    "navigationBarTitleText": "查询历史",
+    "enablePullDownRefresh": true
+}

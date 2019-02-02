@@ -1,0 +1,15 @@
+<template name="tplDeviceException">
+    <view class='device-exception-tpl'>
+        <view class='above'>
+            <text class="title">设备异常</text>
+            <text class="order-number">工单号：{{workOrderNumber}}</text>
+        </view>
+        
+        <view class="below">
+            <text>系统类型：{{systemName}}</text>
+            <text>设备名称：{{deviceName}}</text>
+            <text>位置信息：{{location}} {{place}}</text>
+            <text wx:if="{{userNameTo}}">指派对象：{{userNameTo}} {{userPhoneTo?userPhoneTo:''}}</text>
+        </view>
+    </view>
+</template>

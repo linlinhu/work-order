@@ -1,0 +1,11 @@
+<view class='area-location'>
+  <movable-area scale-area style="width: {{mallImageWidth}}px; height: {{mallImageHeight}}px; overflow: hidden">
+    <movable-view direction="all" scale scale-min="1" scale-max="4">
+      <image style="width: {{mallImageWidth}}px; height: {{mallImageHeight}}px;" src="{{mallPic}}" bindload='imageLoad' binderror="imageLoadError"/>
+      <block wx:for="{{areas}}">
+      <image class='area-pic' src="{{item.areaPic}}" data-index="{{index}}" data-ratio='{{item.ratio}}'  data-x='{{item.x}}'  data-y='{{item.y}}' bindload='areaPicLoad' binderror='areaPicError({{index}})' style="width: {{item.width}}px; height: {{item.height}}px; left: {{item.left}}px; top: {{item.top}}px"/>
+      <view wx:if="{{item.areaId == areaId}}" class='locate-area' style="width: {{item.width}}px; height: {{item.height}}px; left: {{item.left}}px; top: {{item.top}}px"></view>
+      </block>
+    </movable-view>
+  </movable-area>
+</view>

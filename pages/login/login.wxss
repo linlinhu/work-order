@@ -1,0 +1,123 @@
+/* pages/login/login.wxss */
+
+.login {
+    background-color: #fff;
+    height: 100vh;
+}
+
+/* banner区域 */
+
+.login .banner {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 449rpx;
+}
+
+.login .banner image {
+    width: 100%;
+}
+
+/* 内容区域 */
+
+.login .page-content {
+    margin-top: 0;
+    padding-bottom: 0;
+}
+
+.login .title {
+    margin-top: 34rpx;
+    font-size: 40rpx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: #333;
+    line-height: 60rpx;
+    text-align: center;
+}
+
+.login .input-area {
+    margin: 106rpx 75rpx auto;
+}
+
+/* 输入框控件 */
+
+.login .input-area .input-box {
+    height: 98rpx;
+    background-color: #f6f6f6;
+    border-radius: 16rpx;
+    -moz-box-orient: horizontal;
+    -webkit-box-orient: horizontal;
+    box-orient: horizontal;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    display: -moz-box;
+    display: -webkit-box;
+    display: box;
+}
+
+.login .input-area .input-box:last-child {
+    margin-top: 36rpx;
+}
+
+/* 输入框控件-图片区域 */
+
+.input-box .input-box-media {
+    margin-left: 28rpx;
+    margin-top: 6rpx;
+}
+
+.input-box .input-box-media image {
+    width: 38rpx;
+    height: 38rpx;
+}
+
+/* 输入框控件-输入区域 */
+
+.input-box .input-box-content {
+    margin: 0 20rpx;
+    padding-top: -5rpx;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+}
+
+.input-box .input-box-content input {
+    font-family: PingFang-SC-Medium;
+}
+
+.input-box-placeholder {
+    font-size: 28rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: #999;
+}
+
+/* 按钮区域 */
+
+.login .btn-area {
+    width: 80%;
+    margin: 72rpx 10% auto;
+}
+
+.login .btn-area button {
+    background-color: #1bbff5;
+}
+
+/* 底部区域 */
+
+.page-footer {
+    --position: fixed;
+    --bottom: 46rpx;
+    margin-top: 50rpx;
+    width: 100%;
+}
+
+.page-footer .footer-text {
+    font-size: 26rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: #999;
+    line-height: 60rpx;
+    text-align: center;
+}

@@ -1,0 +1,13 @@
+<!--components/picker_date/com_picker_date.wxml-->
+<wxs src="../../wxs/dateUtil.wxs" module="dateUtil" />
+
+<view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+        <view class="weui-label">{{template.title}}</view>
+    </view>
+    <view class="weui-cell__bd">
+        <picker mode="date" value="{{selectedDate == null ? dateUtil.formatNowDate() : selectedDate}}" start="{{template.start}}" end="{{template.end}}" bindchange="onDateChanged">
+            <view class="weui-input">{{selectedDate == null ? dateUtil.formatNowDate() : selectedDate}}</view>
+        </picker>
+    </view>
+</view>

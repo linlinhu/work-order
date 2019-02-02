@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "alphaSorting": "/components/alpha_sorting/index"
+  },
+  "navigationBarTitleText": "指派"
+}

@@ -1,0 +1,2 @@
+/* components/picker_time/com_picker_time.wxss */
+@import "../../libs/weui.wxss";

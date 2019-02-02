@@ -1,0 +1,49 @@
+<import src="/template/order_search"/>
+<import src="/template/device_exception"/>
+<view class="page status">
+    <view class='search-box'>
+        <template is="search-template" data="{{...params}}" />
+    </view>
+    
+    <view class="weui-tab">
+        <view class="weui-navbar">
+            <block wx:for="{{tabs}}" wx:key="tabs">
+                <view class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick" data-id="{{index}}" data-eventStatus="{{item.eventStatus}}">
+                    <view class="weui-navbar__title">{{item.name}}</view>
+                </view>
+            </block>
+            <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+        </view>
+        <view class="weui-tab__panel">
+            <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                <view class="orders">
+                    <view class="item" wx:for="{{orders}}" wx:for-item="order" wx:key="eventStatus-50" data-id="{{order.id}}" data-deviceId="{{order.deviceId}}" data-workOrderNumber="{{order.workOrderNumber}}" data-abnormalCode="{{order.eventStatus}}" bindtap="getOrderDetials">
+                        <template is="tplDeviceException" data="{{...order}}" />
+                        <image wx:if="{{order.eventStatus==30||order.eventStatus==50}}" src="{{order.eventStatus==30?'/assets/status/zhuan.png':'/assets/status/tui.png'}}"></image>
+                    </view>
+                    <view wx:if="{{orders.length == 0}}" class='no-data'>暂无数据</view>
+                </view>
+            </view>
+
+            <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+                <view class="orders">
+                    <view class="item" wx:for="{{orders}}" wx:for-item="order" wx:key="eventStatus-100" data-id="{{order.id}}"  data-deviceId="{{order.deviceId}}" data-workOrderNumber="{{order.workOrderNumber}}" data-abnormalCode="{{order.eventStatus}}" bindtap="getOrderDetials">
+                        <template is="tplDeviceException" data="{{...order}}" />
+                        <image wx:if="{{order.eventStatus==30||order.eventStatus==50}}" src="{{order.eventStatus==30?'/assets/status/zhuan.png':'/assets/status/tui.png'}}"></image>
+                    </view>
+                    <view wx:if="{{orders.length == 0}}" class='no-data'>暂无数据</view>
+                </view>
+            </view>
+            <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+            
+                <view class="orders">
+                    <view class="item" wx:for="{{orders}}" wx:for-item="order" wx:key="eventStatus-100" data-id="{{order.id}}" data-deviceId="{{order.deviceId}}" data-workOrderNumber="{{order.workOrderNumber}}" data-abnormalCode="{{order.eventStatus}}" bindtap="getOrderDetials">
+                        <template is="tplDeviceException" data="{{...order}}" />
+                    </view>
+                    <view wx:if="{{orders.length == 0}}" class='no-data'>暂无数据</view>
+                </view>
+            </view>
+        </view>
+    </view>
+   
+</view>

@@ -1,0 +1,25 @@
+<template name="search-template">
+  <view class='search search-template' name="search-template">
+    <view class="params">
+      <!-- <view class='user-params'>
+        <navigator url="/pages/select_date/index" hover-class="none">
+          <view class="range-time weui-flex items-{{rangeTime.length}}" data-view="">
+            <view class="weui-flex__item" wx:for='{{rangeTime}}' wx:key="{*this}">{{item?item:"全部"}}</view>
+          </view>
+        </navigator>
+      </view> -->
+      <view class='user-params'>
+        <navigator url="/pages/filter/fiter?type={{type?type:2}}" hover-class="none">
+          <view class="typeString" data-view="">
+            <text>{{typeString?typeString:'全部'}}</text>
+          </view>
+        </navigator>
+      </view>
+    </view>
+   
+    <view class="weui-search-bar">
+     <input type="text" class="weui-search-bar__input" placeholder="搜索工单号、设备名称" placeholder-class="phcolor" value="{{keyword}}" bindinput='changeInputVal' bindconfirm="onKeyboardDone"/>
+     <icon class="search-icon" type="search" size="14" bindtap='search'></icon>
+    </view> 
+  </view>
+</template>

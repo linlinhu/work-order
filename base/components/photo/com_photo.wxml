@@ -1,0 +1,27 @@
+<!--components/photo/com_photo.wxml-->
+<view class="weui-cell com-photo">
+    <view class="weui-cell__bd">
+        <view class="weui-uploader">
+            <view wx:if="{{showTitle}}" class="weui-uploader__hd">
+                <view class="weui-uploader__title">{{template.title}}</view>
+            </view>
+            <view class="weui-uploader__bd">
+                <view class="weui-uploader__files" id="uploaderFiles">
+                    <block wx:for="{{files}}" wx:key="*this">
+                        <view class="weui-uploader__file">
+                            <image class="weui-uploader__img" src="{{item}}" id="{{item}}" bindtap="previewImage" mode="aspectFit" />
+                            <image class='icon-del' src='icon/close.png' bindtap='deleteImage' data-index="{{index}}"></image>
+                        </view>
+                    </block>
+                </view>
+                <!-- <view wx:if="{{disabled == false}}" class="weui-uploader__input-box">
+                    <view class="weui-uploader__input" bindtap="onChooseImage"></view>
+                </view> -->
+                <view wx:if="{{disabled == false}}" class="uploader-input">
+                    <image src='icon/icon_camera.png' bindtap="onChooseImage"></image>
+                </view>
+
+            </view>
+        </view>
+    </view>
+</view>

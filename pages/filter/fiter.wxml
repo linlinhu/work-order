@@ -1,0 +1,15 @@
+<!--pages/filter/fiter.wxml-->
+<view class="page filter">
+    <view class="all-type" style="height:{{windowH-50}}px">
+        <view class="filter-type" wx:for="{{allType}}" wx:for-item="type" wx:for-index="idxtype" wx:key="typeCode">
+            <text class="type-name">{{type.name}}</text>
+            <view class="items">
+                <span class="item {{item.isSelected ? 'active' : ''}}" wx:for="{{type.items}}" wx:for-item="item" bindtap="itemClick" data-code="{{item.code}}" wx:for-index="idxitem" data-index="{{idxitem}}" data-pindex="{{idxtype}}" wx:key="itemCode">
+                    {{item.value?item.value:item.name}}
+                    <image src="/assets/filter/active.png"></image>
+                </span>
+            </view>
+        </view>
+    </view>
+    <button class="weui-btn" type="primary" bindtap='getSearchParams'>确认</button>
+</view>

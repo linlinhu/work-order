@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "calendar": "/base/components/calendar/calendar"
+  },
+  "navigationBarTitleText": "我的任务",
+  "enablePullDownRefresh": true
+}

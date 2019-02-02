@@ -1,0 +1,56 @@
+/* pages/filter/fiter.wxss */
+.filter {
+  background: #ffffff;
+  height: 100vh;
+  overflow: hidden;
+}
+.filter .all-type {
+  overflow: auto;
+}
+.filter .filter-type {
+  padding: 28rpx 34rpx 10rpx 34rpx;
+}
+/* .filter .filter-type:last-child {
+  margin-bottom: 100rpx!important;
+} */
+.filter .filter-type .type-name{
+  font-size:32rpx;
+  font-family:PingFang-SC-Bold;
+  font-weight:bold;
+  color: #333333;
+}
+.filter .filter-type .item {
+  display: inline-block;
+  width: 207rpx;
+  height: 88rpx;
+  margin: 16rpx 0;
+  text-align: center;
+  line-height: 88rpx;
+  background: #f4f4f4;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+}
+.filter .filter-type .item:nth-child(3n + 2) {
+  margin:16rpx 32rpx; 
+}
+.filter .filter-type .item.active {
+  position: relative;
+  background: #ECF8FF;
+}
+.filter .filter-type .item image {
+  height: 0rpx;
+  width: 0rpx;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.filter .filter-type .item.active image {
+  height: 38rpx;
+  width: 38rpx;
+}
+.filter button{
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  border-radius: 0;
+}

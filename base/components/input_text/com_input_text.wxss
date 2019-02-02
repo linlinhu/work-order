@@ -1,0 +1,2 @@
+/* components/com_input_text.wxss */
+@import "../../libs/weui.wxss";

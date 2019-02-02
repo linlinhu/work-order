@@ -1,0 +1,2 @@
+/* components/location/com_location.wxss */
+@import "../../libs/weui.wxss";

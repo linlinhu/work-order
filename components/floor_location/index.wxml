@@ -1,0 +1,9 @@
+<!-- 楼层设备定位 -->
+<view class='floor-location'>
+  <movable-area scale-area style="width: {{imagewidth}}px; height: {{imageheight}}px; overflow: hidden">
+    <movable-view direction="all" scale scale-min="1" scale-max="4" bindscale="scaleFloor">
+      <image style="width: {{imagewidth}}px; height: {{imageheight}}px;" src="{{imgUrl}}" bindload='imageLoad' binderror='floorImageLoadError'/>
+      <image class='d-point' style='width: {{22/scale}}px;height: {{17/scale}}px;top:{{pointY}}px; left:{{pointX}}px' src="../../assets/star.png"></image>
+    </movable-view>
+  </movable-area>
+</view>

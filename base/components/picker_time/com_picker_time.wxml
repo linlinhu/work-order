@@ -1,0 +1,15 @@
+<!--components/picker_time/com_picker_time.wxml-->
+<wxs src="../../wxs/dateUtil.wxs" module="dateUtil" />
+<view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+        <view class="weui-label">{{template.title}}</view>
+    </view>
+    <view class="weui-cell__bd">
+        <picker mode="time" value="{{time == null ? dateUtil.formatNowTime() : time}}" start="{{template.start}}" end="{{template.end}}" bindchange="onTimeChanged" disabled="{{disabled}}" >
+            <view class="weui-input">{{time == null ? dateUtil.formatNowTime() : time}}</view>
+        </picker>
+    </view>
+</view>
+
+<!-- <import src="../../templates/tpl_picker_time.wxml"/>
+<template is="tpl_picker_time" data="{{item}}" /> -->

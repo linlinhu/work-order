@@ -1,0 +1,10 @@
+<!--base/components/select/down/com_down_select.wxml-->
+<view class='com-selectBox'>
+    <view class='com-sContent' bindtap='selectToggle'>
+        <view class='com-sTxt'>{{text}}</view>
+        <image src='/resource/images/arrow_down.png' class='com-sImg' animation="{{animationData}}"></image>
+    </view>
+    <view class='com-sList' wx:if="{{selectShow}}">
+        <view wx:for="{{datasource}}" data-index="{{index}}" wx:key='' class='com-sItem' bindtap='setText'>{{item[textKey]}}</view>
+    </view>
+</view>

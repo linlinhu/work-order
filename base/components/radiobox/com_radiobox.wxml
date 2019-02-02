@@ -1,0 +1,12 @@
+<!--base/components/radiobox/com_radiobox.wxml-->
+<radio-group bindchange="radioChange">
+    <label class="weui-cell weui-check__label" wx:for="{{radioItems}}" wx:key="value">
+        <radio class="weui-check" value="{{item.value}}" checked="{{item.checked}}" />
+
+        <view class="weui-cell__hd weui-check__hd_in-checkbox">
+            <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{!item.checked}}"></icon>
+            <icon class="weui-icon-checkbox_success" type="success" size="23" wx:if="{{item.checked}}" color='#18A4FC'></icon>
+        </view>
+        <view class="weui-cell__bd">{{item.text}}</view>
+    </label>
+</radio-group>

@@ -1,0 +1,13 @@
+.area-location {
+  position: relative
+}
+
+.area-pic {
+  position: absolute;
+  z-index: 2;
+}
+.locate-area {
+    position: absolute;
+    z-index: 999;
+    background-color: rgba(247,191,87,.3);
+}

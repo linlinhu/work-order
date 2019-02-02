@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "我的工单",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "menuColumn": "/components/menu-column/index",
+    "menuRow": "/components/menu-row/index"
+}
+}

@@ -1,0 +1,17 @@
+<!--components/input_textarea/com_input_textarea.wxml-->
+
+<view wx:if="{{disabled == true}}" class="weui-cell custom-style">
+    <view wx:if="{{showTitle}}" class="weui-cell__hd">
+        <view class="weui-label">{{template.title}}</view>
+    </view>
+    <view class="weui-cell__bd">
+        <textarea class="weui-textarea" style='line-height:20px;' value="{{value}}" disabled="true" auto-height="true" />
+    </view>
+</view>
+
+<view wx:else class="weui-cell custom-style">
+    <view class="weui-cell__bd">
+        <textarea class="weui-textarea" value='{{value}}' bindinput='onInputChanged' data-required="{{required}}" placeholder="请填写{{template.title}}" style="height: 3.3em" />
+        <view class="weui-textarea-counter">{{inputSize}}/{{maxSize}}</view>
+    </view>
+</view>

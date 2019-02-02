@@ -1,0 +1,26 @@
+<!--pages/member_details/member_details.wxml-->
+<view class="page member-details">
+    <view class='img-bg'>
+        <image src="/assets/member_details/detail_bg.png"></image>
+        <text>{{memberInfo.lastName}}</text>
+    </view>
+    <view class="weui-panel weui-panel_access">
+        <view class="weui-panel__bd">
+            <view class="weui-media-box weui-media-box_text">
+                <view class="weui-media-box__title weui-media-box__title_in-text">姓名</view>
+                <view class="weui-media-box__desc">{{memberInfo.realName}}</view>
+            </view>
+
+            <view class="weui-media-box weui-media-box_text">
+                <view class="weui-media-box__title weui-media-box__title_in-text">手机号</view>
+                <view class="weui-media-box__desc">{{memberInfo.mobile}}</view>
+            </view>
+
+            <view class="weui-media-box weui-media-box_text">
+                <view class="weui-media-box__title weui-media-box__title_in-text">权限角色</view>
+                <view class="weui-media-box__desc">{{memberInfo.flock}}</view>
+            </view>
+
+        </view>
+    </view>
+</view>

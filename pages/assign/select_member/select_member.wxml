@@ -1,0 +1,17 @@
+<view>
+    <view class='search'>
+        <input class="weui-input" auto-focus placeholder="搜索姓名、手机号码" bindblur='getAssignMembers'/>
+        <icon type="search" size="16"/>
+    </view>
+    <view class='detail' wx:if="{{select.name}}">
+        已选：{{select.name}}
+    </view>
+
+    <view class='detail' wx:if="{{!select.name}}">
+        请选择指派人员
+    </view>
+    <view class='tongxunlu'>
+        <alphaSorting id="select_members" check="1" bindmyevent='memberChosen' />
+    </view>
+    <view class="btn btn-primary" bindtap='btnClick'>确定</view>
+</view>

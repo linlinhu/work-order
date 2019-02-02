@@ -1,0 +1,27 @@
+/* components/menu-row/menu-row.wxss */
+.menu-row {
+  margin: 0rpx 24rpx 0 24rpx;
+  height: 220rpx;
+  border-radius: 20rpx;
+  background: #ffffff;
+
+}
+.menu-row .weui-flex__item {
+    text-align: center;
+}
+.menu-row .weui-flex__item image {
+  margin-top: 27rpx;
+  height: 58rpx;
+  width: 58rpx;
+}
+.menu-row .weui-flex__item .number {
+  font-size:48rpx;
+  font-family:PingFang-SC-Bold;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
+  line-height:60rpx;
+}
+.menu-row .text {
+  font-size: 26rpx;
+  color: #999999;
+}

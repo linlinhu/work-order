@@ -1,0 +1,28 @@
+/* components/photo/com_photo.wxss */
+@import "../../libs/weui.wxss";
+
+.com-photo .weui-uploader__file {
+    position: relative;
+    padding: 10rpx 10rpx 10rpx 0;
+    margin-right: 10rpx;
+}
+
+.com-photo .weui-uploader__img {
+    border: 1px solid #d9d9d9;
+    border-radius: 16rpx;
+}
+
+.com-photo .icon-del {
+    position: absolute;
+    right: 0rpx;
+    top: 0rpx;
+    width: 19px;
+    height: 19px;
+}
+
+.com-photo .uploader-input image {
+    width: 79px;
+    height: 79px;
+    padding: 10rpx 10rpx 10rpx 0;
+}
+

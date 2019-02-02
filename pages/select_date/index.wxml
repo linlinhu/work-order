@@ -1,0 +1,2 @@
+<!--pages/common_calendar/index.wxml-->
+<calendar start="{{selectedDate.beginTime?selectedDate.beginTime:''}}" end="{{selectedDate.endTime?selectedDate.endTime:''}}" bindmyevent='onMyEvent' />

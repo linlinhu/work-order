@@ -1,0 +1,27 @@
+<!-- 左侧列表内容部分 -->
+<scroll-view class="content" enable-back-to-top scroll-into-view="{{toView}}" scroll-y="true" scroll-with-animation="true" bindscroll="onPageScroll">
+    <view class='in-to-view' wx:for="{{listMain}}" wx:for-item="group" wx:key="{{group.id}}" id="{{ 'inToView'+group.id}}" data-id='{{group.id}}'>
+        <view class="alpha-cate">{{group.alpha}}</view>
+        <view class='weui-flex item' wx:for="{{group.items}}" wx:for-item="item" wx:key="{{item.id}}">
+            <view class="weui-flex__item info" data-id='{{item.id}}' bindtap='itemTapped'>
+                {{item.name}}
+                <view>{{item.mobile}}</view>
+            </view>
+            <view class='check' wx:if="{{check == '1'}}">
+                <view class="weui-cell__hd weui-check__hd_in-checkbox">
+                    <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{item.id != select.id}}" bindtap='valSelect' data-id='{{item.id}}' data-name='{{item.name}}' data-mobile="{{item.mobile}}"></icon>
+                    <icon class="weui-icon-checkbox_success" type="success" size="23" wx:if="{{item.id == select.id}}" color="#18A4FC" bindtap='emptySelect'></icon>
+                </view>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<!-- 右侧字母导航 -->
+<view class="rgt">
+    <view class="all">*</view>
+    <block wx:for="{{listMain}}" wx:key="{{item.id}}">
+        <view class="alpha  {{isActive==item.id ? 'active':'' }}" bindtap="scrollToViewFn" data-id="{{item.id}}">
+            {{item.alpha}}
+        </view>
+    </block>
+</view>

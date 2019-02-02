@@ -1,0 +1,8 @@
+/* components/barcode/com_barcode.wxss */
+@import "../../libs/weui.wxss";
+
+.barcode-btn {
+    background-color: #1bbff5 !important;
+    width: 70%;
+    margin: auto 15%;
+}

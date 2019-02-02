@@ -1,0 +1,59 @@
+<!--pages/handle/handle.wxml-->
+<view class="page handle" id="handlerForm">
+    <form bindsubmit="onOrderSubmit" report-submit="true">
+        <view class='deal-form'>
+                <block wx:for="{{orderTemplate.groups}}" wx:for-index="gIndex" wx:for-item="group" wx:key="id">
+                    <!-- 设备基础信息组 -->
+                    <view wx:if="{{gIndex == 0}}" class="df-block device-info">
+                        <view class="label-title">设备异常-视频系统</view>
+                        <block wx:for="{{group.items}}" wx:for-index="iIndex" wx:for-item="item" wx:key="id">
+                            <view class='info-item'>
+                                {{item.title}}:{{abnormal[item.dataKey] ? abnormal[item.dataKey] : '未知'}}
+                            </view>
+                        </block>
+                        <view style='clear: both'></view>
+                    </view>
+
+                    <!-- 自定义分组 -->
+                    <block wx:if="{{gIndex == 1}}" wx:for="{{group.items}}" wx:for-item="item" wx:key="id">
+                    <view class="df-block select-type" bindtap='onExceptionTypeTap' wx:if="{{item.type == 90}}">
+                        <view class='label-title'>{{checkItem.text}}</view>
+                        <view class="select-value">{{checkItem.desc}}</view>
+                        <input id='checkItem' name='{{item.itemToken}}' value="{{baseInfo[item.dataKey]}}" hidden='true' />
+                        <view style='clear: both'></view>
+                    </view>
+                    <input hidden='true' name="{{item.itemToken}}" value="{{baseInfo[item.dataKey]}}" wx:if="{{item.type == 99}}"/>
+                    </block>
+
+                    <view class='df-block' wx:if="{{gIndex == 2 || gIndex == 3}}">
+                        <view class='label-title'>{{group.name}}</view>
+                        <view class='key-in'>
+                            <block wx:for="{{group.items}}" wx:for-item="item" wx:key="id">
+                                <com_input_text wx:if="{{item.type == 1}}" template="{{item}}" name="{{item.itemToken}}" />
+                                <com_input_textarea wx:if="{{item.type == 2 && item.itemToken != 'hcxq'}}" custom-style="woui-textarea" template="{{item}}" name="{{item.itemToken}}" />
+                                <com_input_textarea wx:if="{{item.type == 2 && item.itemToken == 'hcxq' && showHcDetail == 1}}" custom-style="woui-textarea" template="{{item}}" name="{{item.itemToken}}" />
+                                <com_radiobox wx:if="{{item.type == 3}}" template="{{item}}" name="{{item.itemToken}}" bind:radioChange="onMaterialChange" />
+                                <com_input_number wx:if="{{item.type == 6}}" template="{{item}}" name="{{item.itemToken}}" />
+                                <com_picker_time wx:if="{{item.type == 7}}" template="{{item}}" name="{{item.itemToken}}" />
+                                <com_picker_date wx:if="{{item.type == 8}}" template="{{item}}" name="{{item.itemToken}}" />
+                                <com_barcode wx:if="{{item.type == 20}}" template="{{item}}" name="{{item.itemToken}}" bind:scanSuccess="onScanSuccess" />
+                                <com_location wx:if="{{item.type == 22}}" template="{{item}}" name="{{item.itemToken}}" />
+                                <com_photo wx:if="{{item.type == 30}}" id="photo" template="{{item}}" name="{{item.itemToken}}" bind:chooseImageSuccess="onChoosedImage" />
+                                <com_select wx:if="{{item.type == 40}}" template="{{item}}" name="{{item.itemToken}}" />
+                                <com_select_cascade wx:if="{{item.type == 41}}" id="cascade_select" template="{{item}}" name="{{item.itemToken}}" bind:valueChanged="onCascadeSelectChanged" />
+                            </block>
+                        </view>
+                    </view>
+                </block>
+        </view>
+        <view class="weui-flex deal-result-btns btn-primary">
+            <block wx:for="{{btns}}"  wx:key="{{code}}">
+            <button class="weui-flex__item btn btn-primary" type="primary" data-code="{{item.code}}" form-type="submit">
+            {{item.name}}
+            </button>
+            <view wx:if="{{index < btns.length - 1}}" class="se_"></view>
+            </block>
+        </view>
+    </form>
+    <modal_sheet wx:if="{{showModal}}" title="异常类型" checkItems="{{checkItems}}" bind:valueChanged="onExceptionTypeSelect" />
+</view>

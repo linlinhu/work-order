@@ -1,0 +1,62 @@
+/* base/components/select/cascade/com_select_cascade.wxss */
+@import "../../../libs/weui.wxss";
+
+.com-selectBox {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 20px;
+}
+
+.com-sContent {
+    border: 1px solid #e2e2e2;
+    background: white;
+    font-size: 16px;
+    position: relative;
+    line-height: 40px;
+}
+
+.com-sImg {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 16px;
+    height: 16px;
+    transition: all 0.3s ease;
+}
+
+.com-sTxt {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 20px 0 6px;
+    font-size: 16px;
+    font-weight: 600; 
+}
+
+.com-sList {
+    background: white;
+    width: inherit;
+    position: absolute;
+    border: 1px solid #e2e2e2;
+    border-top: none;
+    box-sizing: border-box;
+    z-index: 3;
+    --max-height: 120px;
+    overflow: hidden;
+}
+
+.com-sItem {
+    height: 40px;
+    line-height: 40px;
+    border-top: 1px solid #e2e2e2;
+    padding: 0 6px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+}
+
+.com-sItem:first-child {
+    border-top: none;
+}

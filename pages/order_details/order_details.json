@@ -1,0 +1,9 @@
+{ 
+  "navigationBarTitleText": "详情",
+  "disableScroll": true,
+  "usingComponents": {
+    "com_list": "/base/components/list/com_list",
+    "floorLocation": "/components/floor_location/index",
+    "areaLocation": "/components/area_location/index"
+  }
+}

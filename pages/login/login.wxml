@@ -1,0 +1,39 @@
+<!--pages/login/login.wxml-->
+<view class="page login">
+    <view class="page__hd banner">
+        <image src="{{icons.banner}}" mode="aspectFill"></image>
+    </view>
+
+    <view class='page__bd page-content'>
+        <view class='title'>智慧商场一体化管理平台</view>
+
+        <view class='input-area'>
+            <view class='input-box'>
+                <view class='input-box-media'>
+                    <image src='{{icons.account}}' mode='aspectFit'></image>
+                </view>
+                <view class='input-box-content'>
+                    <input type='text' value='{{inputAccount}}' placeholder="请输入账号/手机号码/电子邮箱" placeholder-class="input-box-placeholder" bindinput='onAccountInput' />
+                </view>
+
+            </view>
+            <view class='input-box'>
+                <view class='input-box-media'>
+                    <image src='{{icons.password}}' mode='aspectFit'></image>
+                </view>
+                <view class='input-box-content'>
+                    <input type='password' value='{{inputPassword}}' placeholder="请输入密码" placeholder-class="input-box-placeholder" bindinput='onPasswordInput' />
+                </view>
+            </view>
+        </view>
+
+        <view class="btn-area">
+            <button class="weui-btn" type="primary" bindtap="login">登录</button>
+        </view>
+
+        <view class="page-footer">
+            <view class='footer-text'>忘记密码，请联系平台管理员重置</view>
+        </view>
+
+    </view>
+</view>

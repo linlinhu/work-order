@@ -1,0 +1,10 @@
+<!--components/menu-row/menu-row.wxml-->
+<view class="weui-flex menu-row">
+    <view class="weui-flex__item" wx:for="{{icons}}" wx:key="row">
+        <view bindtap='iconClick' data-eventStatus='{{item.eventStatus}}'>
+            <image src="/assets/index/{{item.icon}}"></image>
+            <view class='number'>{{item.num}}</view>
+            <view class='text'>{{item.name}}</view>
+        </view>
+    </view>
+</view>

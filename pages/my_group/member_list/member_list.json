@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "班组成员",
+    "usingComponents": {
+        "alphaSorting": "/components/alpha_sorting/index"
+    }
+}

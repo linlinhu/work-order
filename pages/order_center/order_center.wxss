@@ -1,0 +1,51 @@
+/* pages/order_center/order_center.wxss */
+@import "/style/order_search.wxss";
+@import "/style/device_exception.wxss";
+.page.order-center {
+  background: #ffffff;
+  height: 100%;
+  position: relative;
+
+}
+.page.order-center .search {
+  margin-bottom:32rpx;
+  margin-top:32rpx;
+}
+.page.order-center .weui-navbar {
+    background: #ffffff;
+}
+.page.order-center .search-box {
+    position: fixed;
+    top: 0rpx;
+    width: 100vw;
+    left: 0;
+    background:#ffffff;
+    z-index:999;
+}
+.page.order-center .orders {
+    margin-top: 140rpx;
+    height: 100%;
+    padding-top: 24rpx;
+    background: #f8f8f8;
+}
+.page.order-center .orders .item {
+    position: relative;
+}
+.page.order-center .orders .no-data {
+    width:100vw;
+    padding:100rpx 0;
+    text-align:center;
+    background: #ffffff;
+
+}
+
+.page.order-center .orders .item:last-child {
+  margin-bottom: 0;
+}
+.page.order-center .orders .item image {
+  position: absolute;
+  width: 70rpx;
+  height: 70rpx;
+  top: 0;
+  right: 0;
+}

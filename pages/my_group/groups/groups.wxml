@@ -1,0 +1,12 @@
+<!--pages/my_group/my_group.wxml-->
+<view class='page my-group'>
+    <view class="weui-panel weui-panel_access">
+        <view class="weui-panel__bd">
+            <view wx:if="{{groups.length == 0}}" class='no-data'>暂无班组</view>
+            <view class="weui-media-box weui-media-box_text" wx:for="{{groups}}" wx:key="id" data-id="{{item.id}}" data-name="{{item.name}}" data-leader="{{item.header}}" bindtap='groupClick'>
+                <view class="weui-media-box__title weui-media-box__title_in-text title">{{item.name}}</view>
+                <view class="weui-media-box__desc desc">{{item.teamDevice}}</view>
+            </view>
+        </view>
+    </view>
+</view>

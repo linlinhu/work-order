@@ -1,0 +1,2 @@
+/* components/select/com_select.wxss */
+@import "../../libs/weui.wxss";

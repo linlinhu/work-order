@@ -1,0 +1,51 @@
+/* components/menu-column/index.wxss */
+
+.menu-column .weui-cells {
+    margin-top: 24rpx;
+}
+
+.menu-column .weui-cell_access .weui-cell__bd {
+    text-align: left;
+}
+
+.menu-column .weui-cell_access .weui-cell__bd image {
+    width: 48rpx;
+    height: 48rpx;
+    margin-right: 24rpx;
+}
+
+.menu-column .weui-cell_access .weui-cell__bd p {
+    font-size: 30rpx;
+}
+
+.menu-column .weui-cell_access .weui-cell__ft::after {
+    content: " ";
+    display: inline-block;
+    height: 14rpx;
+    width: 14rpx;
+    border-width: 2px 2px 0 0;
+    border-color: #a8a8ad;
+    border-style: solid;
+    -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    position: absolute;
+    top: 50%;
+    margin-top: -4px;
+    right: 30rpx;
+}
+
+.menu-column .js_item {
+    height: 108rpx;
+    padding: 0;
+}
+
+.menu-column .js_item .box {
+    padding: 30rpx 0;
+    width: 100%;
+    height: 48rpx;
+    line-height: 48rpx;
+}
+
+.menu-column .weui-cell__bd {
+    padding: 0 30rpx;
+}

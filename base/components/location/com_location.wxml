@@ -1,0 +1,9 @@
+<!--components/location/com_location.wxml-->
+<view class="weui-cell">
+    <view class="weui-cell__bd">
+        <textarea class="weui-textarea" disabled='true' value='{{poiInfo}}' placeholder="" style="height: 3.3em" />
+    </view>
+    <view class="weui-cell__ft">
+        <button class="weui-btn mini-btn" type="default" size="mini" bindtap='onLocationChanged'>{{template.title}}</button>
+    </view>
+</view>

@@ -1,0 +1,4 @@
+/* base/components/radiobox/com_radiobox.wxss */
+.weui-cell__bd {
+    text-align: left;
+}

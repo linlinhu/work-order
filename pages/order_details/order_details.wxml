@@ -1,0 +1,144 @@
+<wxs src="../../base/wxs/dateUtil.wxs" module="dateUtil" />
+<wxs module='tool'>
+    function timestampToTime(timestamp) {
+        var date = getDate(timestamp);
+        var Y = date.getFullYear() + '-';
+        var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+        var D = date.getDate() + ' ';
+        var h = date.getHours() + ':';
+        var m = date.getMinutes();
+        return Y + M + D + h + m;
+    };
+
+    function cueTitle(val) {
+        var operation = val.operation,
+            title = '未知状态';
+        if (operation == 10) {
+            title = "认领任务";
+        } else if (operation == 20) {
+            title = "指派任务";
+        } else if (operation == 30) {
+            title = "任务退回";
+        } else if (operation == 40) {
+            title = "任务接受";
+        } else if (operation == 50) {
+            title = "处理结果_";
+            var dealType = val.dealResult.dealType;
+            if (dealType == 5) {
+                title += "还未修好";
+            } else if (dealType == 15) {
+                title += "转新单"
+            }
+            if (dealType == 25) {
+                title += "维修完毕";
+            }
+        }
+        return title;
+    };
+    module.exports = {
+        timestampToTime: timestampToTime,
+        cueTitle: cueTitle
+    }
+</wxs>
+<import src="/template/device_other_info" />
+<view class="order-details">
+    <view class="buts-{{btns.length}}">
+        <view class="weui-tab">
+            <view class="weui-navbar">
+                <block wx:for="{{tabs}}" wx:key="*this">
+                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                        <view class="weui-navbar__title btn-title">{{item}}</view>
+                    </view>
+                </block>
+                <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+            </view>
+            <view class="weui-tab__panel">
+                <view class="weui-tab__content basic-msg" hidden="{{activeIndex != 0}}">
+                    <com_list wx:if="{{deviceDetailListTpl != null}}" template="{{deviceDetailListTpl.groups[0].items[0]}}" datasource="{{deviceDetail}}" default-value='暂未录入'/>
+                    <view wx:if="{{deviceDetail.deviceOtherInfo && deviceDetail.deviceOtherInfo.length >0 }}">
+                        <!-- <view class='woui-group-title'>附加信息</view> -->
+                        <view wx:for="{{deviceDetail.deviceOtherInfo}}" wx:key="*this">
+                            <template is="device-other_info_template" data="{{...item}}" />
+                        </view>
+                    </view>
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+                    <view class='abnormal-location'>
+                        <view class='switch' bindtap='changeLocationType'>
+                            <image src='../../assets/icon_switch.png' />
+                            <text wx:if="{{locationType == 1}}">切换园区图</text>
+                            <text wx:if="{{locationType == 2}}">切换楼层图</text>
+                        </view>
+                        <floorLocation wx:if="{{locationType == 1}}" mallId="{{mallId}}" deviceId="{{deviceId}}" />
+                        <areaLocation wx:if="{{locationType == 2}}" mallId="{{mallId}}" areaId="{{areaId}}" />
+                    </view>
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+                    <view class='time-cue'>
+                        <view wx:for="{{cues}}" wx:for-item="cue" class="cue {{(cue.operation==50) ? 'green' : 'blue'}}" wx:key="*this3">
+                            <view class="above">
+                                <text class="title">{{tool.cueTitle(cue)}}</text>
+                                <text class='time'>{{tool.timestampToTime(cue.createTime)}}</text>
+                            </view>
+                            <view class="below">
+                                <text wx:if="{{cue.userNameFrom}}">操作人：{{cue.userNameFrom}}</text>
+                                <text wx:if="{{cue.operation==10}}">电话：{{cue.userPhoneTo?cue.userPhoneTo:'-'}}</text>
+                                <text wx:elif="{{cue.operation==50}}">电话：{{cue.dealResult.dealUserPhone?cue.dealResult.dealUserPhone:'-'}}</text>
+                                <text wx:else>电话：{{cue.userPhoneFrom?cue.userPhoneFrom:'-'}}</text>
+                                <view wx:if="{{cue.userIdFrom != cue.userIdTo}}" hidden="{{cue.operation != 20}}">
+                                    <text>指派给：{{cue.userNameTo? cue.userNameTo:'-'}}</text>
+                                    <text>电话：{{cue.userPhoneTo? cue.userPhoneTo:'-'}}</text>
+                                </view>
+                                <text wx:if="{{cue.operation == 30}}">退回原因：{{cue.memo ? cue.memo : '-'}}</text>
+                                <text wx:elif="{{cue.memo.length > 0}}">备注：{{cue.memo}}</text>
+                                <view wx:if="{{cue.operation == 50}}">
+                                    <text wx:if="{{cue.dealResult.dealType == 5 || cue.dealResult.dealType == 25}}">处理结论：{{cue.dealResult.abnormalTypeName ? cue.dealResult.abnormalTypeName : '异常类型未知'}},{{cue.dealResult.conclusion ? cue.dealResult.conclusion : '异常结论未知'}}</text>
+                                    <text wx:elif="{{cue.dealResult.dealType == 15}}">异常原因：{{cue.dealResult.abnormalTypeName ? cue.dealResult.abnormalTypeName : '异常类型未知'}},{{cue.dealResult.conclusion ? cue.dealResult.conclusion : '异常结论未知'}}</text>
+
+                                    <text>维修耗材：{{cue.dealResult.materialDetail.length > 0 ? cue.dealResult.materialDetail : '无'}}</text>
+                                </view>
+
+                            </view>
+                            <view wx:if="{{cue.dealResult && cue.dealResult.dealPicture}}" class="wrap">
+                                <image wx:for="{{cue.dealResult.dealPicture}}" wx:for-item="picture" wx:for-index="cindex" wx:key="unique" src="{{picture}}" data-index="{{cindex}}" data-pindex="{{index}}" bindtap="previewImage"></image>
+                            </view>
+                        </view>
+                        <view class="cue orange" wx:if="{{abnormal.happenTime && cues.length > 0}}">
+                            <view class="above">
+                                <text class="title">出现异常</text>
+                                <text class='time'>{{tool.timestampToTime(abnormal.happenTime)}}</text>
+                            </view>
+                            <view class="below">
+                                <text>子系统：{{abnormal.systemName?abnormal.systemName:'-'}}</text>
+                                <text>位置描述：{{abnormal.place ? abnormal.place:'暂未录入'}}</text>
+                                <text>设备编号：{{abnormal.deviceCode ? abnormal.deviceCode : '-'}}</text>
+                                <text>设备名称：{{abnormal.deviceName ? abnormal.deviceName :'-'}}</text>
+                                <text>设备供应商：{{abnormal.suppier ? abnormal.suppier : '暂未录入'}}</text>
+                            </view>
+                        </view>
+                        <view wx:else>
+                            <view class="no-data">暂无数据</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="weui-flex btn-group" hidden="{{btns.length==0}}">
+        <button class="weui-flex__item btn {{item.oper=='refuse' || item.oper=='assign' ? 'btn-warning' : 'btn-primary'}}" wx:for="{{btns}}" data-oper="{{item.oper}}" bindtap='clickEvent' wx:key='{*this}'>{{item.name}}</button>
+    </view>
+</view>
+<view class='modal-wrap' wx:if="{{btnOper == 'refuse'}}">
+    <view class='content'>
+        <form bindsubmit="onRejectSubmit" bindreset='onRejectReset' report-submit="true">
+            <view class='top'>退回原因</view>
+            <view class='center'>
+                <textarea name="memo"></textarea>
+            </view>
+            <view class='bot weui-flex'>
+                <button class="weui-flex__item btn" form-type='reset'>取消</button>
+                <button class="weui-flex__item btn" form-type='submit'>确认</button>
+            </view>
+        </form>
+    </view>
+</view>

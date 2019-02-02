@@ -1,0 +1,43 @@
+/* pages/my_group/my_group.wxss */
+
+.page.my-group .weui-panel_access::before,
+.page.my-group .weui-panel_access::after {
+    border: 0;
+}
+
+.page.my-group .weui-media-box:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    height: 1px;
+    border-top: 1rpx solid #ddd;
+    color: #e5e5e5;
+    left: 15px;
+    right: 15px;
+}
+
+.page.my-group .weui-media-box {
+    padding: 32rpx 34rpx;
+}
+
+.page.my-group .title {
+    font-size: 32rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: #333;
+}
+
+.page.my-group .desc {
+    font-size: 28rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: #999;
+}
+
+.page.my-group .no-data {
+    width: 100vw;
+    padding: 60rpx 0;
+    text-align: center;
+    background: #fff;
+}
+

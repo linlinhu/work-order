@@ -1,0 +1,12 @@
+<!--components/menu-column/index.wxml-->
+<view class="weui-cells menu-column">
+    <view class="weui-cell weui-cell_access js_item" wx:for="{{list}}" wx:key="column">
+        <view class='box' data-nextModule="{{item.nextModule}}" data-url="{{item.url}}" bindtap='itemClick'>
+            <view class="weui-cell__bd">
+                <image class="left" src='/assets/index/{{item.icon}}'></image>
+                <p>{{item.name}}</p>
+            </view>
+            <view class="weui-cell__ft"></view>
+        </view>
+    </view>
+</view>

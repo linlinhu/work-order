@@ -1,0 +1,15 @@
+<view class='page index'>
+    <view class="above">
+        <image class="bg-img" src='/assets/index/home_bg.png'></image>
+        <view class='today-finished'>
+            <view class='number'>{{todayFinishNum}}</view>
+            <view class='text'>今日完成任务</view>
+        </view>
+        <menuColumn icons="{{icons}}" class="status-statistics" bind:myevent="iconItemClick"></menuColumn>
+    </view>
+    <view class="page__category js_categoryInner link-list">
+        <menuRow list="{{list}}" bind:myevent="listItemClick"></menuRow>
+    </view>
+    <!-- 公众号关注组件 -->
+    <!-- <official-account></official-account> -->
+</view>

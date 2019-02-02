@@ -1,0 +1,2 @@
+/* components/checkbox/com_checkbox.wxss */
+@import "../../libs/weui.wxss";

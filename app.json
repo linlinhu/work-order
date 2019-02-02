@@ -1,0 +1,48 @@
+{
+    "pages": [
+        "pages/splash/splash",
+        "pages/finished_task/index",
+        "pages/index",
+        "pages/login/login",
+        "pages/select_date/index",
+        "pages/assign/handler/handler",
+        "pages/order_details/order_details",
+        "pages/status/status",
+        "pages/filter/fiter",
+        "pages/my_group/groups/groups",
+        "pages/assign/select_member/select_member",
+        "pages/handler/handler",
+        "pages/order_center/order_center",
+        "pages/my_group/member_list/member_list",
+        "pages/my_group/member_details/member_details"
+    ],
+    "window": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "我的工单",
+        "navigationBarBackgroundColor": "#f8f8f8",
+        "backgroundColor": "#f8f8f8"
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "connectSocket": 10000,
+        "uploadFile": 10000,
+        "downloadFile": 10000
+    },
+    "usingComponents": {
+        "com_barcode": "base/components/barcode/com_barcode",
+        "com_checkbox": "base/components/checkbox/com_checkbox",
+        "com_radiobox": "base/components/radiobox/com_radiobox",
+        "com_input_number": "base/components/input_number/com_input_number",
+        "com_input_text": "base/components/input_text/com_input_text",
+        "com_input_textarea": "base/components/input_textarea/com_input_textarea",
+        "com_location": "base/components/location/com_location",
+        "com_photo": "base/components/photo/com_photo",
+        "com_picker_date": "base/components/picker_date/com_picker_date",
+        "com_picker_time": "base/components/picker_time/com_picker_time",
+        "com_select": "base/components/select/com_select",
+        "com_select_cascade": "base/components/select/cascade/com_select_cascade",
+        "com_down_select": "base/components/select/down/com_down_select",
+        "com_list": "/base/components/list/com_list"
+    },
+    "debug": true
+}

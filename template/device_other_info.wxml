@@ -1,0 +1,10 @@
+<template name="device-other_info_template">
+    <view class='weui-cell weui-cell_input'>
+        <view class='weui-cell__hd'>
+            <view class='weui-label'>{{pDescription}}</view>
+        </view>
+        <view class='weui-cell__bd'>
+            <text>{{pValue}}</text>
+        </view>
+    </view>
+</template>

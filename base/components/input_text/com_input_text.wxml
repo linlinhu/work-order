@@ -1,0 +1,10 @@
+<!--components/com_input_text.wxml-->
+<view class="weui-cell weui-cell_input">
+    <view wx:if="{{showTitle}}" class="weui-cell__hd">
+        <view class="weui-label">{{template.title}}</view>
+    </view>
+    <view class="weui-cell__bd">
+        <input wx:if="{{disabled}}" class="weui-input" type='text' value='{{value}}' disabled='true' bindinput='onInputChanged' />
+        <input wx:else class="weui-input" type='text' value='{{value}}' bindinput='onInputChanged' data-required="{{required}}" placeholder="请输入{{template.title}}" />
+    </view>
+</view>

@@ -1,0 +1,27 @@
+<!--components/sheetModal/sheet.wxml-->
+
+<view class='sheet-modal'>
+    <view class='sheet-modal-title'>
+        <text>{{title}}</text>
+    </view>
+
+    <view class='sheet-modal-inner'>
+        <scroll-view scroll-y style="height: 550rpx;" scroll-top="0">
+            <view class='sheet-check-area'>
+                <checkbox-group bindchange="checkItemChange">
+                    <label class="weui-cell weui-check__label" wx:for="{{checkItems}}" wx:key="value">
+                        <checkbox class="weui-check" value="{{item.value}}" checked="{{item.checked}}" />
+                        <view class="weui-cell__bd">{{item.name}}</view>
+                        <view class="weui-cell__hd weui-check__hd_in-checkbox">
+                            <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{!item.checked}}"></icon>
+                            <icon class="weui-icon-checkbox_success" type="success" size="23" wx:if="{{item.checked}}" color='#18A4FC'></icon>
+                        </view>
+                    </label>
+                </checkbox-group>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="sheet-btn-area">
+        <button class="weui-btn" type="primary" bindtap='onConfirm'>确定</button>
+    </view>
+</view>

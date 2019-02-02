@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "com_input_text": "../input_text/com_input_text"
+    }
+}
